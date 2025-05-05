@@ -52,10 +52,10 @@ layout_mode = 2
 text = "CUT TREE"
 
 [node name="Status" type="VBoxContainer" parent="."]
-offset_left = 1064.0
-offset_top = 32.0
-offset_right = 1166.0
-offset_bottom = 82.0
+offset_left = 1072.0
+offset_top = 24.0
+offset_right = 1226.0
+offset_bottom = 155.0
 
 [node name="Player" type="Label" parent="Status"]
 layout_mode = 2
@@ -66,14 +66,33 @@ text = "PLAYER"
 layout_mode = 2
 theme = SubResource("Theme_r0du0")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "HEALTH : 100"
+text = "HEALTH   : 100 / 100"
 script = ExtResource("2_uu6xs")
 
 [node name="Stamina" type="Label" parent="Status"]
 layout_mode = 2
-theme = SubResource("Theme_r0du0")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "HEALTH : 100"
-script = ExtResource("2_uu6xs")
+text = "STAMINA : 100 / 100"
+
+[node name="Hunger" type="Label" parent="Status"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "HUNGER  : 100 / 100"
+
+[node name="Thirst" type="Label" parent="Status"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "THRIST     : 100 / 100"
+
+[node name="Inventory" type="VBoxContainer" parent="."]
+offset_left = 1064.0
+offset_top = 256.0
+offset_right = 1155.0
+offset_bottom = 296.0
+
+[node name="Inventory" type="Label" parent="Inventory"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "INVENTORY"
 
 [connection signal="pressed" from="HBoxContainer/Cut_Tree" to="Status/Health" method="_on_cut_tree_pressed"]
