@@ -1,3 +1,62 @@
-[gd_scene format=3 uid="uid://yf3ovtu5k5bo"]
+[gd_scene load_steps=4 format=3 uid="uid://yf3ovtu5k5bo"]
+
+[ext_resource type="Texture2D" uid="uid://4sxftiunhrwk" path="res://Asset/Menu.png" id="1_glv2v"]
+[ext_resource type="Script" uid="uid://n4mcrb7laevb" path="res://Scripts/Menu/tree.gd" id="2_uu6xs"]
+
+[sub_resource type="Theme" id="Theme_r0du0"]
 
 [node name="Main" type="Node"]
+
+[node name="Background" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -684.0
+offset_top = -388.0
+offset_right = 684.0
+offset_bottom = 388.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_glv2v")
+expand_mode = 2
+
+[node name="Menu" type="VBoxContainer" parent="."]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 16.0
+offset_right = 112.0
+offset_bottom = 16.0
+grow_vertical = 2
+
+[node name="Action" type="Button" parent="Menu"]
+layout_mode = 2
+text = "ACTION"
+
+[node name="Crafting" type="Button" parent="Menu"]
+layout_mode = 2
+text = "CRAFTING"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 176.0
+offset_top = 40.0
+offset_right = 257.0
+offset_bottom = 88.0
+
+[node name="Cut_Tree" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "CUT TREE"
+
+[node name="Tree" type="Label" parent="."]
+offset_left = 1080.0
+offset_top = 416.0
+offset_right = 1122.0
+offset_bottom = 439.0
+theme = SubResource("Theme_r0du0")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "TREE : 0"
+script = ExtResource("2_uu6xs")
+
+[connection signal="pressed" from="HBoxContainer/Cut_Tree" to="Tree" method="_on_cut_tree_pressed"]
