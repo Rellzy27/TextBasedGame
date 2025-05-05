@@ -14,6 +14,10 @@ config/name="text game"
 run/main_scene="res://Main.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
 
+[autoload]
+
+Main="*res://Scripts/Main_game/main.gd"
+
 [display]
 
 window/size/viewport_width=1366

@@ -1,11 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://yf3ovtu5k5bo"]
+[gd_scene load_steps=5 format=3 uid="uid://yf3ovtu5k5bo"]
 
 [ext_resource type="Texture2D" uid="uid://4sxftiunhrwk" path="res://Asset/Menu.png" id="1_glv2v"]
-[ext_resource type="Script" uid="uid://n4mcrb7laevb" path="res://Scripts/Menu/tree.gd" id="2_uu6xs"]
+[ext_resource type="Script" uid="uid://bbaqqlky7bjo0" path="res://Scripts/Main_game/main.gd" id="1_r0du0"]
+[ext_resource type="Script" uid="uid://n4mcrb7laevb" path="res://Scripts/Main_game/Health.gd" id="2_uu6xs"]
 
 [sub_resource type="Theme" id="Theme_r0du0"]
 
 [node name="Main" type="Node"]
+script = ExtResource("1_r0du0")
 
 [node name="Background" type="TextureRect" parent="."]
 anchors_preset = 8
@@ -49,14 +51,29 @@ offset_bottom = 88.0
 layout_mode = 2
 text = "CUT TREE"
 
-[node name="Tree" type="Label" parent="."]
-offset_left = 1080.0
-offset_top = 416.0
-offset_right = 1122.0
-offset_bottom = 439.0
+[node name="Status" type="VBoxContainer" parent="."]
+offset_left = 1064.0
+offset_top = 32.0
+offset_right = 1166.0
+offset_bottom = 82.0
+
+[node name="Player" type="Label" parent="Status"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "PLAYER"
+
+[node name="Health" type="Label" parent="Status"]
+layout_mode = 2
 theme = SubResource("Theme_r0du0")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "TREE : 0"
+text = "HEALTH : 100"
 script = ExtResource("2_uu6xs")
 
-[connection signal="pressed" from="HBoxContainer/Cut_Tree" to="Tree" method="_on_cut_tree_pressed"]
+[node name="Stamina" type="Label" parent="Status"]
+layout_mode = 2
+theme = SubResource("Theme_r0du0")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "HEALTH : 100"
+script = ExtResource("2_uu6xs")
+
+[connection signal="pressed" from="HBoxContainer/Cut_Tree" to="Status/Health" method="_on_cut_tree_pressed"]
