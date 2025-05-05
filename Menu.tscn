@@ -39,16 +39,21 @@ text = "EXIT"
 
 [node name="Title" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
+anchor_bottom = 0.5
 offset_left = -108.0
+offset_top = -75.5
 offset_right = 108.0
-offset_bottom = 23.0
+offset_bottom = -52.5
 grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Label" type="Label" parent="Title"]
 layout_mode = 2
 text = "Untitled Text Survival Game"
 
 [connection signal="pressed" from="VBoxContainer/Start_Buttton" to="." method="_on_start_buttton_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit_Button" to="." method="_on_exit_button_pressed"]
