@@ -1,13 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://yf3ovtu5k5bo"]
 
-[ext_resource type="Texture2D" uid="uid://4sxftiunhrwk" path="res://Asset/Menu.png" id="1_glv2v"]
-[ext_resource type="Script" uid="uid://bbaqqlky7bjo0" path="res://Scripts/Main_game/main.gd" id="1_r0du0"]
-[ext_resource type="Script" uid="uid://n4mcrb7laevb" path="res://Scripts/Main_game/Health.gd" id="2_uu6xs"]
+[ext_resource type="Script" uid="uid://bbaqqlky7bjo0" path="res://Scripts/Main_game/main.gd" id="1_u44n3"]
+[ext_resource type="Texture2D" uid="uid://4sxftiunhrwk" path="res://Asset/Menu.png" id="2_sb48q"]
+[ext_resource type="Script" uid="uid://n4mcrb7laevb" path="res://Scripts/Main_game/Health.gd" id="3_t88pq"]
 
 [sub_resource type="Theme" id="Theme_r0du0"]
 
-[node name="Main" type="Node"]
-script = ExtResource("1_r0du0")
+[node name="Game" type="Node"]
+script = ExtResource("1_u44n3")
 
 [node name="Background" type="TextureRect" parent="."]
 anchors_preset = 8
@@ -21,7 +21,7 @@ offset_right = 684.0
 offset_bottom = 388.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_glv2v")
+texture = ExtResource("2_sb48q")
 expand_mode = 2
 
 [node name="Menu" type="VBoxContainer" parent="."]
@@ -41,13 +41,13 @@ text = "ACTION"
 layout_mode = 2
 text = "CRAFTING"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="Action" type="HBoxContainer" parent="."]
 offset_left = 176.0
 offset_top = 40.0
 offset_right = 257.0
 offset_bottom = 88.0
 
-[node name="Cut_Tree" type="Button" parent="HBoxContainer"]
+[node name="Cut_Tree" type="Button" parent="Action"]
 layout_mode = 2
 text = "CUT TREE"
 
@@ -67,7 +67,7 @@ layout_mode = 2
 theme = SubResource("Theme_r0du0")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "HEALTH   : 100 / 100"
-script = ExtResource("2_uu6xs")
+script = ExtResource("3_t88pq")
 
 [node name="Stamina" type="Label" parent="Status"]
 layout_mode = 2
@@ -95,4 +95,4 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "INVENTORY"
 
-[connection signal="pressed" from="HBoxContainer/Cut_Tree" to="Status/Health" method="_on_cut_tree_pressed"]
+[connection signal="pressed" from="Action/Cut_Tree" to="Status/Health" method="_on_cut_tree_pressed"]

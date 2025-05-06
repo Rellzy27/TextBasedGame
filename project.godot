@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="text game"
-run/main_scene="res://Main.tscn"
+run/main_scene="uid://yev8ae5e3o7t"
 config/features=PackedStringArray("4.4", "Forward Plus")
 
 [autoload]
