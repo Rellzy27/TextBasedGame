@@ -25,7 +25,7 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="CheckButton" type="CheckButton" parent="VBoxContainer"]
+[node name="Vsync" type="CheckButton" parent="VBoxContainer"]
 layout_mode = 2
 text = "VSYNC"
 
@@ -49,4 +49,4 @@ size_flags_horizontal = 4
 text = "SETTINGS"
 horizontal_alignment = 1
 
-[connection signal="toggled" from="VBoxContainer/CheckButton" to="." method="_on_check_button_toggled"]
+[connection signal="toggled" from="VBoxContainer/Vsync" to="." method="_on_vsync_toggled"]
