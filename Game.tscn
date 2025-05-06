@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://yf3ovtu5k5bo"]
+[gd_scene load_steps=6 format=3 uid="uid://yf3ovtu5k5bo"]
 
 [ext_resource type="Script" uid="uid://bbaqqlky7bjo0" path="res://Scripts/Main_game/main.gd" id="1_u44n3"]
 [ext_resource type="Texture2D" uid="uid://4sxftiunhrwk" path="res://Asset/Menu.png" id="2_sb48q"]
+[ext_resource type="Theme" uid="uid://ciyv1gcjbqk2u" path="res://Asset/Resource/button.tres" id="3_sb48q"]
 [ext_resource type="Script" uid="uid://n4mcrb7laevb" path="res://Scripts/Main_game/Health.gd" id="3_t88pq"]
 
 [sub_resource type="Theme" id="Theme_r0du0"]
@@ -41,15 +42,33 @@ text = "ACTION"
 layout_mode = 2
 text = "CRAFTING"
 
-[node name="Action" type="HBoxContainer" parent="."]
+[node name="Action" type="VBoxContainer" parent="."]
 offset_left = 176.0
 offset_top = 40.0
-offset_right = 257.0
-offset_bottom = 88.0
+offset_right = 279.0
+offset_bottom = 251.0
 
 [node name="Cut_Tree" type="Button" parent="Action"]
 layout_mode = 2
-text = "CUT TREE"
+theme = ExtResource("3_sb48q")
+text = "Gather Stone"
+
+[node name="Gather_Stick" type="Button" parent="Action"]
+layout_mode = 2
+theme = ExtResource("3_sb48q")
+text = " Gather Stick "
+
+[node name="TextureButton" type="TextureButton" parent="Action"]
+layout_mode = 2
+theme = ExtResource("3_sb48q")
+
+[node name="Label" type="Label" parent="Action/TextureButton"]
+layout_mode = 0
+offset_right = 101.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Button"
+horizontal_alignment = 1
 
 [node name="Status" type="VBoxContainer" parent="."]
 offset_left = 1072.0
@@ -95,4 +114,29 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "INVENTORY"
 
+[node name="Stick" type="Label" parent="Inventory"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="Stone" type="Label" parent="Inventory"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="Wood" type="Label" parent="Inventory"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="Leads" type="Label" parent="Inventory"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="Berry" type="Label" parent="Inventory"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="Apple" type="Label" parent="Inventory"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
 [connection signal="pressed" from="Action/Cut_Tree" to="Status/Health" method="_on_cut_tree_pressed"]
+[connection signal="pressed" from="Action/Gather_Stick" to="Status/Health" method="_on_cut_tree_pressed"]
